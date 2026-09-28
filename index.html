@@ -8,446 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #f59e0b;
-      --accent: #10b981;
-      --purple: #8b5cf6;
-      --pink: #ec4899;
-      --text: #1e293b;
-      --muted: #64748b;
-      --science: #0ea5e9;
-      --humanities: #f97316;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Poppins', system-ui, sans-serif;
-      background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 50%, #fce7f3 100%);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, #1e40af, #7c3aed);
-      color: white;
-      padding: 1rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo span {
-      background: linear-gradient(90deg, #fbbf24, #f472b6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    nav {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.4rem 0.85rem;
-      border-radius: 999px;
-      transition: all 0.2s;
-      font-size: 0.92rem;
-    }
-
-    nav a:hover, nav a.active {
-      background: rgba(255,255,255,0.22);
-    }
-
-    .hero {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-
-    .hero-card {
-      background: white;
-      border-radius: 24px;
-      padding: 2.5rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 60%);
-      animation: pulse 8s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.6; }
-      50% { transform: scale(1.1); opacity: 1; }
-    }
-
-    .hero-card h1 {
-      font-size: clamp(1.8rem, 5vw, 2.7rem);
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-      background: linear-gradient(90deg, #1e40af, #7c3aed, #db2777);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: relative;
-    }
-
-    .hero-card .tagline {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 680px;
-      margin: 0 auto 1.25rem;
-      position: relative;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-      position: relative;
-    }
-
-    .feature {
-      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
-      border-radius: 16px;
-      padding: 1.15rem;
-      text-align: center;
-      border: 2px solid transparent;
-      transition: all 0.25s;
-    }
-
-    .feature:hover {
-      transform: translateY(-4px);
-      border-color: var(--primary);
-      box-shadow: 0 10px 25px rgba(37,99,235,0.15);
-    }
-
-    .feature .icon { font-size: 1.9rem; margin-bottom: 0.4rem; }
-    .feature h3 { font-size: 0.98rem; margin-bottom: 0.25rem; color: var(--primary-dark); }
-    .feature p { font-size: 0.82rem; color: var(--muted); }
-
-    section {
-      max-width: 1100px;
-      margin: 2.75rem auto;
-      padding: 0 1.5rem;
-    }
-
-    .section-title {
-      font-size: 1.7rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-    }
-
-    .section-desc {
-      color: var(--muted);
-      margin-bottom: 1.4rem;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .category-card {
-      background: white;
-      border-radius: 20px;
-      padding: 1.7rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      transition: all 0.3s;
-      border-top: 6px solid;
-    }
-
-    .category-card.science { border-color: var(--science); }
-    .category-card.humanities { border-color: var(--humanities); }
-
-    .category-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-
-    .category-card h2 {
-      font-size: 1.35rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .category-card.science h2 { color: #0369a1; }
-    .category-card.humanities h2 { color: #c2410c; }
-
-    .subject-list {
-      list-style: none;
-      display: grid;
-      gap: 0.55rem;
-    }
-
-    .subject-list li button {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.7rem 1rem;
-      background: #f8fafc;
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text);
-      cursor: pointer;
-      transition: all 0.2s;
-      text-align: left;
-    }
-
-    .subject-list li button:hover {
-      background: #eff6ff;
-      border-color: var(--primary);
-      color: var(--primary-dark);
-    }
-
-    .subject-list .badge {
-      font-size: 0.72rem;
-      background: #dbeafe;
-      color: #1e40af;
-      padding: 0.18rem 0.5rem;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-
-    .unmissable {
-      background: linear-gradient(135deg, #fef3c7, #fce7f3);
-      border-radius: 20px;
-      padding: 1.75rem;
-      margin-top: 0.5rem;
-    }
-
-    .topic-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .topic-card {
-      background: white;
-      border-radius: 14px;
-      padding: 1.2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .topic-card h4 {
-      color: #b45309;
-      margin-bottom: 0.45rem;
-      font-size: 1.02rem;
-    }
-
-    .topic-card ul {
-      padding-left: 1.15rem;
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .topic-card ul li { margin-bottom: 0.28rem; }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .tip-card {
-      background: white;
-      border-radius: 16px;
-      padding: 1.4rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      border-left: 5px solid var(--primary);
-    }
-
-    .tip-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-dark);
-    }
-
-    .tip-card p, .tip-card ul {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .tip-card ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-    }
-
-    .tip-card ul li { margin-bottom: 0.25rem; }
-
-    .about-box {
-      background: white;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-
-    .about-box p { margin-bottom: 1rem; }
-
-    footer {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 200;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-
-    .modal.active { display: flex; }
-
-    .modal-content {
-      background: white;
-      border-radius: 20px;
-      max-width: 640px;
-      width: 100%;
-      max-height: 88vh;
-      overflow-y: auto;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #f1f5f9;
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      font-size: 1.25rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal h2 {
-      margin-bottom: 0.35rem;
-      color: var(--primary-dark);
-      padding-right: 2rem;
-    }
-
-    .modal .subtitle {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .modal h3 {
-      font-size: 1.05rem;
-      margin: 1.25rem 0 0.5rem;
-      color: #0f172a;
-    }
-
-    .modal ul {
-      padding-left: 1.2rem;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .modal ul li { margin-bottom: 0.3rem; }
-
-    .modal .study-tip {
-      background: #eff6ff;
-      border-left: 4px solid var(--primary);
-      padding: 0.85rem 1rem;
-      border-radius: 0 10px 10px 0;
-      font-size: 0.9rem;
-      margin: 1.1rem 0;
-    }
-
-    .external-links {
-      margin-top: 1.4rem;
-      padding-top: 1.1rem;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    .external-links p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .external-links a {
-      display: inline-block;
-      padding: 0.55rem 1rem;
-      background: #f1f5f9;
-      border-radius: 10px;
-      text-decoration: none;
-      color: var(--primary-dark);
-      font-weight: 500;
-      font-size: 0.9rem;
-      margin: 0.25rem 0.35rem 0.25rem 0;
-      transition: background 0.2s;
-    }
-
-    .external-links a:hover {
-      background: #dbeafe;
-    }
-
-    @media (max-width: 600px) {
-      .hero-card { padding: 1.5rem; }
-      nav { justify-content: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -529,7 +90,201 @@
     </div>
   </section>
 
-  <!-- BODY_MARKER: remaining content continues in next update if truncated -->
+  <section id="unmissable">
+    <h2 class="section-title">⭐ Unmissable Topics</h2>
+    <p class="section-desc">These areas appear year after year. Master them early — they give you the highest return on study time.</p>
+
+    <div class="unmissable">
+      <div class="topic-grid">
+        <div class="topic-card">
+          <h4>🧬 Biology</h4>
+          <ul>
+            <li>First-line defence mechanisms</li>
+            <li>Human reproductive adaptations</li>
+            <li>Liver functions in digestion</li>
+            <li>Blood clotting process</li>
+            <li>Breathing mechanisms</li>
+            <li>Ecology & human impact</li>
+            <li>Genetics, evolution & disease</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>📐 Mathematics</h4>
+          <ul>
+            <li>Algebra (factorisation, polynomials, simultaneous equations)</li>
+            <li>Trigonometry</li>
+            <li>Mensuration (especially 3D)</li>
+            <li>Statistics & Probability</li>
+            <li>Vectors, Sets & Coordinate geometry</li>
+            <li>Graphs & Linear programming</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>✍️ English</h4>
+          <ul>
+            <li>Summary writing</li>
+            <li>Composition (formal letters, argumentative & descriptive)</li>
+            <li>Comprehension + accurate grammar</li>
+            <li>Literature analysis (where applicable)</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>🌍 Geography</h4>
+          <ul>
+            <li>Map reading & interpretation</li>
+            <li>Climate & weather systems</li>
+            <li>Population, settlement & migration</li>
+            <li>Agriculture & environmental issues (Malawi focus)</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>⚗️ Chemistry</h4>
+          <ul>
+            <li>Atomic structure & Periodic Table</li>
+            <li>Chemical bonding & formulae</li>
+            <li>Acids, bases & salts</li>
+            <li>Stoichiometry & mole concept</li>
+            <li>Organic chemistry basics</li>
+            <li>Electrolysis & industrial processes</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>⚡ Physics</h4>
+          <ul>
+            <li>Motion, forces & Newton’s laws</li>
+            <li>Work, energy & power</li>
+            <li>Electricity & magnetism</li>
+            <li>Light, lenses & refraction</li>
+            <li>Waves, sound & heat</li>
+            <li>Gas laws & simple machines</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>🌱 Agriculture</h4>
+          <ul>
+            <li>Soil types, fertility & conservation</li>
+            <li>Crop production & pests/diseases</li>
+            <li>Livestock & animal health</li>
+            <li>Farm tools, records & marketing</li>
+            <li>Environmental management</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>📜 History</h4>
+          <ul>
+            <li>Pre-colonial societies in Malawi</li>
+            <li>Colonial rule & its impact</li>
+            <li>Struggle for independence</li>
+            <li>Post-independence developments</li>
+            <li>Regional & international relations</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>🗣️ Chichewa</h4>
+          <ul>
+            <li>Comprehension & summary</li>
+            <li>Composition (formal & informal)</li>
+            <li>Grammar & language use</li>
+            <li>Literature / culture questions</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>✝️ Bible Knowledge</h4>
+          <ul>
+            <li>Life & teachings of Jesus</li>
+            <li>Early Church (Acts)</li>
+            <li>Old Testament prophets & events</li>
+            <li>Christian living & ethics</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>💻 Computer Studies</h4>
+          <ul>
+            <li>Hardware & software</li>
+            <li>Word processing, spreadsheets, databases</li>
+            <li>Internet, email & safety</li>
+            <li>Algorithms & flowcharts</li>
+            <li>Ethics, security & society</li>
+          </ul>
+        </div>
+        <div class="topic-card">
+          <h4>🤝 Life Skills</h4>
+          <ul>
+            <li>Personal development & decisions</li>
+            <li>Health, hygiene & HIV awareness</li>
+            <li>Citizenship & human rights</li>
+            <li>Family, relationships & gender</li>
+            <li>Entrepreneurship & work</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tips">
+    <h2 class="section-title">💡 Exam Tips That Work</h2>
+    <p class="section-desc">Practical strategies for MANEB MSCE preparation and exam day.</p>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h3>Before the exam</h3>
+        <ul>
+          <li>Use a simple weekly plan — revise a little every day</li>
+          <li>Focus first on unmissable topics for each subject</li>
+          <li>Practise past questions under timed conditions</li>
+          <li>Teach a friend — explaining reveals what you remember</li>
+        </ul>
+      </div>
+      <div class="tip-card">
+        <h3>In the exam room</h3>
+        <ul>
+          <li>Read every question twice before answering</li>
+          <li>Start with questions you know well to build confidence</li>
+          <li>Show clear working in Maths and Sciences — method marks matter</li>
+          <li>Manage time: leave a few minutes to check answers</li>
+        </ul>
+      </div>
+      <div class="tip-card">
+        <h3>Subject-specific focus</h3>
+        <ul>
+          <li><strong>English:</strong> Practise summary and composition weekly</li>
+          <li><strong>Maths:</strong> Master algebra and graphs early</li>
+          <li><strong>Sciences:</strong> Learn to draw and label diagrams accurately</li>
+          <li><strong>Essay subjects:</strong> Structure answers with clear points and examples</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">ℹ️ About MSCE LIBRARY</h2>
+    <div class="about-box">
+      <p><strong>MSCE LIBRARY</strong> is a free resource built for Malawi secondary school students preparing for the Malawi School Certificate of Education (MSCE) examinations run by MANEB.</p>
+      <p>We focus on clear study guidance, high-yield topics and practical exam strategies. Past papers are linked only when you choose to use them — the site itself is designed to be useful on its own.</p>
+      <p>Always cross-check important details with your teachers and official MANEB information. More study notes and features will be added over time.</p>
+      <p>Stay consistent. Study smart. You’ve got this. 💪</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with ❤️ for Malawi students • MSCE LIBRARY 2026</p>
+    <p style="margin-top: 0.4rem;">Independent resource • Not affiliated with MANEB</p>
+  </footer>
+
+  <div class="modal" id="subjectModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+      <h2 id="modalTitle">Subject</h2>
+      <p class="subtitle" id="modalSubtitle"></p>
+      <div id="modalBody"></div>
+      <div class="external-links" id="modalExternal" style="display:none;">
+        <p>Need actual past papers? You can find free collections here:</p>
+        <div id="modalLinks"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="subjects-data.js"></script>
+  <script src="app-core.js"></script>
   <script src="enhancements.js"></script>
 </body>
 </html>
