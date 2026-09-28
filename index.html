@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSCE LIBRARY | Your Free Study Companion</title>
+  <meta name="description" content="Free past papers, study guides and unmissable topics for Malawi MSCE students. Organised by subject for Sciences and Humanities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #f59e0b;
+      --accent: #10b981;
+      --purple: #8b5cf6;
+      --pink: #ec4899;
+      --bg: #f0f9ff;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --science: #0ea5e9;
+      --humanities: #f97316;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 50%, #fce7f3 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e40af, #7c3aed);
+      color: white;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo span {
+      background: linear-gradient(90deg, #fbbf24, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover, nav a.active {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Hero / Welcome */
+    .hero {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 60%);
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    .hero-card h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(90deg, #1e40af, #7c3aed, #db2777);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+
+    .hero-card .tagline {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+
+    .feature {
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+      border-radius: 16px;
+      padding: 1.25rem;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: all 0.25s;
+    }
+
+    .feature:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 25px rgba(37,99,235,0.15);
+    }
+
+    .feature .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--primary-dark);
+    }
+
+    .feature p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Category cards */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.75rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: all 0.3s;
+      border-top: 6px solid;
+    }
+
+    .category-card.science {
+      border-color: var(--science);
+    }
+
+    .category-card.humanities {
+      border-color: var(--humanities);
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .category-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .category-card.science h2 { color: #0369a1; }
+    .category-card.humanities h2 { color: #c2410c; }
+
+    .subject-list {
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .subject-list li a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 1rem;
+      background: #f8fafc;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: all 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .subject-list li a:hover {
+      background: #eff6ff;
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    .subject-list .badge {
+      font-size: 0.75rem;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Unmissable section */
+    .unmissable {
+      background: linear-gradient(135deg, #fef3c7, #fce7f3);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 1rem;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .topic-card {
+      background: white;
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .topic-card h4 {
+      color: #b45309;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .topic-card ul {
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .topic-card ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Modal / Subject detail */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #f1f5f9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal h2 {
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+
+    .modal .links {
+      margin-top: 1.25rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .modal .links a {
+      display: block;
+      padding: 0.8rem 1rem;
+      background: #eff6ff;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .modal .links a:hover {
+      background: #dbeafe;
+    }
+
+    .note {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 0.9rem 1rem;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.9rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero-card { padding: 1.5rem; }
+      nav { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">📚 <span>MSCE LIBRARY</span></div>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#unmissable">Unmissable Topics</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / WELCOME -->
+  <div class="hero" id="home">
+    <div class="hero-card">
+      <h1>Welcome to MSCE LIBRARY 🎓</h1>
+      <p class="tagline">
+        Your free, friendly study companion for Malawi secondary school students preparing for the <strong>MANEB MSCE</strong> examinations.
+      </p>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto 1rem; position: relative;">
+        Here you will find carefully organised past papers by subject, study focus areas, and the topics MANEB almost never misses. Built for students who want to study smart.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">📄</div>
+          <h3>Past Papers</h3>
+          <p>Organised by subject – not random dumps</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔬</div>
+          <h3>Sciences</h3>
+          <p>Maths, Biology, Chemistry, Physics & more</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📖</div>
+          <h3>Humanities</h3>
+          <p>English, Geography, History, Chichewa...</p>
+        </div>
+        <div class="feature">
+          <div class="icon">⭐</div>
+          <h3>Unmissable Topics</h3>
+          <p>Areas MANEB loves to examine</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBJECTS -->
+  <section id="subjects">
+    <h2 class="section-title">📚 Choose Your Path</h2>
+    <p class="section-desc">Past papers and resources are organised by subject under Sciences and Humanities. Click any subject to see available papers and links.</p>
+
+    <div class="category-grid">
+      <!-- SCIENCES -->
+      <div class="category-card science">
+        <h2>🔬 Sciences</h2>
+        <ul class="subject-list">
+          <li><a href="#" onclick="openSubject('mathematics'); return false;">Mathematics <span class="badge">Core</span></a></li>
+          <li><a href="#" onclick="openSubject('biology'); return false;">Biology <span class="badge">Core</span></a></li>
+          <li><a href="#" onclick="openSubject('chemistry'); return false;">Chemistry</a></li>
+          <li><a href="#" onclick="openSubject('physics'); return false;">Physics / Physical Science</a></li>
+          <li><a href="#" onclick="openSubject('agriculture'); return false;">Agriculture</a></li>
+          <li><a href="#" onclick="openSubject('computer'); return false;">Computer Studies</a></li>
+        </ul>
+      </div>
+
+      <!-- HUMANITIES -->
+      <div class="category-card humanities">
+        <h2>📖 Humanities</h2>
+        <ul class="subject-list">
+          <li><a href="#" onclick="openSubject('english'); return false;">English <span class="badge">Compulsory</span></a></li>
+          <li><a href="#" onclick="openSubject('geography'); return false;">Geography</a></li>
+          <li><a href="#" onclick="openSubject('history'); return false;">History</a></li>
+          <li><a href="#" onclick="openSubject('chichewa'); return false;">Chichewa</a></li>
+          <li><a href="#" onclick="openSubject('bible'); return false;">Bible Knowledge</a></li>
+          <li><a href="#" onclick="openSubject('life-skills'); return false;">Life Skills / Social Studies</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNMISSABLE TOPICS -->
+  <section id="unmissable">
+    <h2 class="section-title">⭐ Unmissable Topics</h2>
+    <p class="section-desc">These are areas that appear again and again in MANEB MSCE papers. Master them first!</p>
+
+    <div class="unmissable">
+      <div class="topic-grid">
+        <div class="topic-card">
+          <h4>🧬 Biology</h4>
+          <ul>
+            <li>First-line defence mechanisms</li>
+            <li>Human reproductive system adaptations</li>
+            <li>Liver functions related to digestion</li>
+            <li>Blood clotting process</li>
+            <li>Breathing mechanisms</li>
+            <li>Ecology & human impact on ecosystems</li>
+            <li>Genetics, evolution & disease control</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>📐 Mathematics</h4>
+          <ul>
+            <li>Algebra (factorisation, polynomials, simultaneous equations)</li>
+            <li>Trigonometry</li>
+            <li>Mensuration (especially 3D shapes)</li>
+            <li>Statistics & Probability</li>
+            <li>Vectors, Sets & Coordinate geometry</li>
+            <li>Graphs & Linear programming</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>✍️ English</h4>
+          <ul>
+            <li>Summary writing</li>
+            <li>Composition (formal letters, argumentative & descriptive essays)</li>
+            <li>Comprehension + accurate grammar</li>
+            <li>Literature analysis (where applicable)</li>
+          </ul>
+        </div>
+
+        <div class="topic-card">
+          <h4>🌍 Geography</h4>
+          <ul>
+            <li>Map reading & interpretation</li>
+            <li>Climate & weather systems</li>
+            <li>Population, settlement & migration</li>
+            <li>Agriculture & environmental issues (Malawi focus)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title">ℹ️ About MSCE LIBRARY</h2>
+    <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+      <p style="margin-bottom: 1rem;">
+        <strong>MSCE LIBRARY</strong> is a free resource hub created to help Malawi secondary school students prepare effectively for the Malawi School Certificate of Education (MSCE) examinations administered by MANEB.
+      </p>
+      <p style="margin-bottom: 1rem;">
+        We prioritise <strong>MSCE subjects</strong>, organise past papers by subject (not randomly), and highlight the high-yield topics that examiners return to year after year.
+      </p>
+      <p style="margin-bottom: 1rem;">
+        Past papers are sourced from publicly available educational collections such as FiloKin Edu and other free sharing platforms. Always cross-check with your teachers and official MANEB information.
+      </p>
+      <p>
+        More features (marking schemes, detailed study guides, pathway information for the new curriculum) will be added as we grow. Stay focused and study smart! 💪
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built with ❤️ for Malawi students • MSCE LIBRARY 2026</p>
+    <p style="margin-top: 0.5rem;">Resources linked from free educational sites • Not affiliated with MANEB</p>
+  </footer>
+
+  <!-- Subject Modal -->
+  <div class="modal" id="subjectModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <h2 id="modalTitle">Subject</h2>
+      <p id="modalDesc" style="color: var(--muted);"></p>
+      <div class="links" id="modalLinks"></div>
+      <div class="note">
+        💡 Tip: Practice under timed conditions. After attempting a paper, review the topics you found difficult using the Unmissable Topics list.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const subjects = {
+      mathematics: {
+        title: "📐 Mathematics",
+        desc: "Core MSCE subject. Focus on algebra, trigonometry, mensuration, statistics and graphs.",
+        links: [
+          { name: "Browse Mathematics papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=mathematics&grade=Form+4" },
+          { name: "All Mathematics resources (FiloKin)", url: "https://kizitochikuni.com/pdfs?subject=mathematics" }
+        ]
+      },
+      biology: {
+        title: "🧬 Biology",
+        desc: "Very popular MSCE subject. Essay questions on defence, reproduction, ecology and genetics are frequent.",
+        links: [
+          { name: "Browse Biology papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=biology&grade=Form+4" },
+          { name: "All Biology resources", url: "https://kizitochikuni.com/pdfs?subject=biology" }
+        ]
+      },
+      chemistry: {
+        title: "⚗️ Chemistry",
+        desc: "Focus on atomic structure, bonding, acids & bases, organic chemistry and stoichiometry.",
+        links: [
+          { name: "Browse Chemistry papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=chemistry&grade=Form+4" }
+        ]
+      },
+      physics: {
+        title: "⚡ Physics / Physical Science",
+        desc: "Key areas include motion, electricity, light, waves and energy.",
+        links: [
+          { name: "Browse Physics papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=physics&grade=Form+4" }
+        ]
+      },
+      agriculture: {
+        title: "🌱 Agriculture",
+        desc: "Practical and theory papers covering crops, animals, soil and farming systems in Malawi.",
+        links: [
+          { name: "Browse Agriculture papers", url: "https://kizitochikuni.com/pdfs?subject=agriculture" }
+        ]
+      },
+      computer: {
+        title: "💻 Computer Studies",
+        desc: "Hardware, software, applications, internet and basic programming concepts.",
+        links: [
+          { name: "Browse Computer Studies resources", url: "https://kizitochikuni.com/pdfs?subject=computer" }
+        ]
+      },
+      english: {
+        title: "✍️ English",
+        desc: "Compulsory for MSCE certificate. Strong focus on summary, composition and comprehension.",
+        links: [
+          { name: "Browse English papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=english&grade=Form+4" }
+        ]
+      },
+      geography: {
+        title: "🌍 Geography",
+        desc: "Map work, climate, population, agriculture and environmental issues are regularly examined.",
+        links: [
+          { name: "Browse Geography papers", url: "https://kizitochikuni.com/pdfs?subject=geography&grade=Form+4" }
+        ]
+      },
+      history: {
+        title: "📜 History",
+        desc: "Malawi and African history, colonial period, independence and contemporary issues.",
+        links: [
+          { name: "Browse History papers", url: "https://kizitochikuni.com/pdfs?subject=history" }
+        ]
+      },
+      chichewa: {
+        title: "🗣️ Chichewa",
+        desc: "Language, comprehension, composition and literature components.",
+        links: [
+          { name: "Browse Chichewa papers", url: "https://kizitochikuni.com/pdfs?subject=chichewa" }
+        ]
+      },
+      bible: {
+        title: "✝️ Bible Knowledge",
+        desc: "Life and teachings of Jesus, early church, Old Testament prophets and Christian living.",
+        links: [
+          { name: "Browse Bible Knowledge papers", url: "https://kizitochikuni.com/pdfs?subject=bible" }
+        ]
+      },
+      "life-skills": {
+        title: "🤝 Life Skills / Social Studies",
+        desc: "Personal development, health, citizenship and social issues.",
+        links: [
+          { name: "Browse related resources", url: "https://kizitochikuni.com/pdfs" }
+        ]
+      }
+    };
+
+    function openSubject(key) {
+      const data = subjects[key];
+      if (!data) return;
+
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalDesc').textContent = data.desc;
+
+      const linksContainer = document.getElementById('modalLinks');
+      linksContainer.innerHTML = data.links.map(link => 
+        `<a href="${link.url}" target="_blank" rel="noopener">${link.name} →</a>`
+      ).join('');
+
+      document.getElementById('subjectModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('subjectModal').classList.remove('active');
+    }
+
+    // Close on outside click
+    document.getElementById('subjectModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Smooth scroll for nav
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', function(e) {
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
