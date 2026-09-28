@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MSCE LIBRARY | Your Free Study Companion</title>
-  <meta name="description" content="Free past papers, study guides and unmissable topics for Malawi MSCE students. Organised by subject for Sciences and Humanities.">
+  <title>MSCE LIBRARY | Your Free Study Companion for Malawi MSCE</title>
+  <meta name="description" content="Free study guides, unmissable topics, exam tips and organised past paper links for Malawi MSCE students. Built for students who want to study smart.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,19 +16,13 @@
       --accent: #10b981;
       --purple: #8b5cf6;
       --pink: #ec4899;
-      --bg: #f0f9ff;
-      --card: #ffffff;
       --text: #1e293b;
       --muted: #64748b;
       --science: #0ea5e9;
       --humanities: #f97316;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', system-ui, sans-serif;
@@ -38,7 +32,6 @@
       line-height: 1.6;
     }
 
-    /* Header */
     header {
       background: linear-gradient(135deg, #1e40af, #7c3aed);
       color: white;
@@ -75,7 +68,7 @@
 
     nav {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.6rem;
       flex-wrap: wrap;
     }
 
@@ -83,17 +76,16 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
-      padding: 0.4rem 0.9rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 999px;
       transition: all 0.2s;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     nav a:hover, nav a.active {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.22);
     }
 
-    /* Hero / Welcome */
     .hero {
       max-width: 1100px;
       margin: 2rem auto;
@@ -127,7 +119,7 @@
     }
 
     .hero-card h1 {
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-size: clamp(1.8rem, 5vw, 2.7rem);
       font-weight: 800;
       margin-bottom: 0.75rem;
       background: linear-gradient(90deg, #1e40af, #7c3aed, #db2777);
@@ -137,16 +129,16 @@
     }
 
     .hero-card .tagline {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 1.5rem;
+      max-width: 680px;
+      margin: 0 auto 1.25rem;
       position: relative;
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 1rem;
       margin-top: 1.5rem;
       position: relative;
@@ -155,7 +147,7 @@
     .feature {
       background: linear-gradient(135deg, #eff6ff, #f0fdf4);
       border-radius: 16px;
-      padding: 1.25rem;
+      padding: 1.15rem;
       text-align: center;
       border: 2px solid transparent;
       transition: all 0.25s;
@@ -167,44 +159,30 @@
       box-shadow: 0 10px 25px rgba(37,99,235,0.15);
     }
 
-    .feature .icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
+    .feature .icon { font-size: 1.9rem; margin-bottom: 0.4rem; }
+    .feature h3 { font-size: 0.98rem; margin-bottom: 0.25rem; color: var(--primary-dark); }
+    .feature p { font-size: 0.82rem; color: var(--muted); }
 
-    .feature h3 {
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      color: var(--primary-dark);
-    }
-
-    .feature p {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* Sections */
     section {
       max-width: 1100px;
-      margin: 3rem auto;
+      margin: 2.75rem auto;
       padding: 0 1.5rem;
     }
 
     .section-title {
-      font-size: 1.75rem;
+      font-size: 1.7rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.55rem;
     }
 
     .section-desc {
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
     }
 
-    /* Category cards */
     .category-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -214,19 +192,14 @@
     .category-card {
       background: white;
       border-radius: 20px;
-      padding: 1.75rem;
+      padding: 1.7rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.06);
       transition: all 0.3s;
       border-top: 6px solid;
     }
 
-    .category-card.science {
-      border-color: var(--science);
-    }
-
-    .category-card.humanities {
-      border-color: var(--humanities);
-    }
+    .category-card.science { border-color: var(--science); }
+    .category-card.humanities { border-color: var(--humanities); }
 
     .category-card:hover {
       transform: translateY(-6px);
@@ -234,7 +207,7 @@
     }
 
     .category-card h2 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       margin-bottom: 0.75rem;
       display: flex;
       align-items: center;
@@ -247,49 +220,52 @@
     .subject-list {
       list-style: none;
       display: grid;
-      gap: 0.6rem;
+      gap: 0.55rem;
     }
 
-    .subject-list li a {
+    .subject-list li button {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0.7rem 1rem;
       background: #f8fafc;
       border-radius: 12px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      transition: all 0.2s;
       border: 1px solid #e2e8f0;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
     }
 
-    .subject-list li a:hover {
+    .subject-list li button:hover {
       background: #eff6ff;
       border-color: var(--primary);
       color: var(--primary-dark);
     }
 
     .subject-list .badge {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       background: #dbeafe;
       color: #1e40af;
-      padding: 0.2rem 0.55rem;
+      padding: 0.18rem 0.5rem;
       border-radius: 999px;
       font-weight: 600;
     }
 
-    /* Unmissable section */
     .unmissable {
       background: linear-gradient(135deg, #fef3c7, #fce7f3);
       border-radius: 20px;
-      padding: 2rem;
-      margin-top: 1rem;
+      padding: 1.75rem;
+      margin-top: 0.5rem;
     }
 
     .topic-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
@@ -297,27 +273,65 @@
     .topic-card {
       background: white;
       border-radius: 14px;
-      padding: 1.25rem;
+      padding: 1.2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .topic-card h4 {
       color: #b45309;
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+      font-size: 1.02rem;
     }
 
     .topic-card ul {
-      padding-left: 1.2rem;
+      padding-left: 1.15rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .topic-card ul li { margin-bottom: 0.28rem; }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .tip-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.4rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-left: 5px solid var(--primary);
+    }
+
+    .tip-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+
+    .tip-card p, .tip-card ul {
       font-size: 0.9rem;
       color: var(--muted);
     }
 
-    .topic-card ul li {
-      margin-bottom: 0.3rem;
+    .tip-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
     }
 
-    /* Footer */
+    .tip-card ul li { margin-bottom: 0.25rem; }
+
+    .about-box {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .about-box p { margin-bottom: 1rem; }
+
     footer {
       text-align: center;
       padding: 2.5rem 1.5rem;
@@ -325,34 +339,25 @@
       font-size: 0.9rem;
     }
 
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    /* Modal / Subject detail */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.55);
       z-index: 200;
       align-items: center;
       justify-content: center;
       padding: 1rem;
     }
 
-    .modal.active {
-      display: flex;
-    }
+    .modal.active { display: flex; }
 
     .modal-content {
       background: white;
       border-radius: 20px;
-      max-width: 600px;
+      max-width: 640px;
       width: 100%;
-      max-height: 85vh;
+      max-height: 88vh;
       overflow-y: auto;
       padding: 2rem;
       position: relative;
@@ -367,7 +372,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -375,38 +380,67 @@
     }
 
     .modal h2 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.35rem;
       color: var(--primary-dark);
+      padding-right: 2rem;
     }
 
-    .modal .links {
-      margin-top: 1.25rem;
-      display: grid;
-      gap: 0.6rem;
+    .modal .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
     }
 
-    .modal .links a {
-      display: block;
-      padding: 0.8rem 1rem;
+    .modal h3 {
+      font-size: 1.05rem;
+      margin: 1.25rem 0 0.5rem;
+      color: #0f172a;
+    }
+
+    .modal ul {
+      padding-left: 1.2rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .modal ul li { margin-bottom: 0.3rem; }
+
+    .modal .study-tip {
       background: #eff6ff;
+      border-left: 4px solid var(--primary);
+      padding: 0.85rem 1rem;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.9rem;
+      margin: 1.1rem 0;
+    }
+
+    .external-links {
+      margin-top: 1.4rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .external-links p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .external-links a {
+      display: inline-block;
+      padding: 0.55rem 1rem;
+      background: #f1f5f9;
       border-radius: 10px;
       text-decoration: none;
       color: var(--primary-dark);
       font-weight: 500;
+      font-size: 0.9rem;
+      margin: 0.25rem 0.35rem 0.25rem 0;
       transition: background 0.2s;
     }
 
-    .modal .links a:hover {
+    .external-links a:hover {
       background: #dbeafe;
-    }
-
-    .note {
-      background: #fef3c7;
-      border-left: 4px solid #f59e0b;
-      padding: 0.9rem 1rem;
-      border-radius: 0 10px 10px 0;
-      font-size: 0.9rem;
-      margin-top: 1.25rem;
     }
 
     @media (max-width: 600px) {
@@ -422,86 +456,82 @@
       <nav>
         <a href="#home" class="active">Home</a>
         <a href="#subjects">Subjects</a>
-        <a href="#unmissable">Unmissable Topics</a>
+        <a href="#unmissable">Unmissable</a>
+        <a href="#tips">Exam Tips</a>
         <a href="#about">About</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO / WELCOME -->
   <div class="hero" id="home">
     <div class="hero-card">
       <h1>Welcome to MSCE LIBRARY 🎓</h1>
       <p class="tagline">
-        Your free, friendly study companion for Malawi secondary school students preparing for the <strong>MANEB MSCE</strong> examinations.
+        Your free study companion for Malawi secondary school students preparing for the <strong>MANEB MSCE</strong>.
       </p>
-      <p style="color: var(--muted); max-width: 600px; margin: 0 auto 1rem; position: relative;">
-        Here you will find carefully organised past papers by subject, study focus areas, and the topics MANEB almost never misses. Built for students who want to study smart.
+      <p style="color: var(--muted); max-width: 620px; margin: 0 auto 1rem; position: relative; font-size: 0.98rem;">
+        Clear study guides, high-yield topics, exam strategies and organised resources — all in one place. Built so you can study smart without jumping between sites.
       </p>
 
       <div class="features">
         <div class="feature">
-          <div class="icon">📄</div>
-          <h3>Past Papers</h3>
-          <p>Organised by subject – not random dumps</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🔬</div>
-          <h3>Sciences</h3>
-          <p>Maths, Biology, Chemistry, Physics & more</p>
-        </div>
-        <div class="feature">
           <div class="icon">📖</div>
-          <h3>Humanities</h3>
-          <p>English, Geography, History, Chichewa...</p>
+          <h3>Study Guides</h3>
+          <p>Key topics & how to approach each subject</p>
         </div>
         <div class="feature">
           <div class="icon">⭐</div>
           <h3>Unmissable Topics</h3>
-          <p>Areas MANEB loves to examine</p>
+          <p>What MANEB keeps examining</p>
+        </div>
+        <div class="feature">
+          <div class="icon">💡</div>
+          <h3>Exam Tips</h3>
+          <p>Strategies that actually help</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📄</div>
+          <h3>Past Papers</h3>
+          <p>Links only when you need them</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SUBJECTS -->
   <section id="subjects">
-    <h2 class="section-title">📚 Choose Your Path</h2>
-    <p class="section-desc">Past papers and resources are organised by subject under Sciences and Humanities. Click any subject to see available papers and links.</p>
+    <h2 class="section-title">📚 Choose Your Subject</h2>
+    <p class="section-desc">Click any subject for a focused study guide, key topics and practical tips. Past paper links are available inside if you want them.</p>
 
     <div class="category-grid">
-      <!-- SCIENCES -->
       <div class="category-card science">
         <h2>🔬 Sciences</h2>
         <ul class="subject-list">
-          <li><a href="#" onclick="openSubject('mathematics'); return false;">Mathematics <span class="badge">Core</span></a></li>
-          <li><a href="#" onclick="openSubject('biology'); return false;">Biology <span class="badge">Core</span></a></li>
-          <li><a href="#" onclick="openSubject('chemistry'); return false;">Chemistry</a></li>
-          <li><a href="#" onclick="openSubject('physics'); return false;">Physics / Physical Science</a></li>
-          <li><a href="#" onclick="openSubject('agriculture'); return false;">Agriculture</a></li>
-          <li><a href="#" onclick="openSubject('computer'); return false;">Computer Studies</a></li>
+          <li><button onclick="openSubject('mathematics')">Mathematics <span class="badge">Core</span></button></li>
+          <li><button onclick="openSubject('biology')">Biology <span class="badge">Core</span></button></li>
+          <li><button onclick="openSubject('chemistry')">Chemistry</button></li>
+          <li><button onclick="openSubject('physics')">Physics / Physical Science</button></li>
+          <li><button onclick="openSubject('agriculture')">Agriculture</button></li>
+          <li><button onclick="openSubject('computer')">Computer Studies</button></li>
         </ul>
       </div>
 
-      <!-- HUMANITIES -->
       <div class="category-card humanities">
         <h2>📖 Humanities</h2>
         <ul class="subject-list">
-          <li><a href="#" onclick="openSubject('english'); return false;">English <span class="badge">Compulsory</span></a></li>
-          <li><a href="#" onclick="openSubject('geography'); return false;">Geography</a></li>
-          <li><a href="#" onclick="openSubject('history'); return false;">History</a></li>
-          <li><a href="#" onclick="openSubject('chichewa'); return false;">Chichewa</a></li>
-          <li><a href="#" onclick="openSubject('bible'); return false;">Bible Knowledge</a></li>
-          <li><a href="#" onclick="openSubject('life-skills'); return false;">Life Skills / Social Studies</a></li>
+          <li><button onclick="openSubject('english')">English <span class="badge">Compulsory</span></button></li>
+          <li><button onclick="openSubject('geography')">Geography</button></li>
+          <li><button onclick="openSubject('history')">History</button></li>
+          <li><button onclick="openSubject('chichewa')">Chichewa</button></li>
+          <li><button onclick="openSubject('bible')">Bible Knowledge</button></li>
+          <li><button onclick="openSubject('life-skills')">Life Skills / Social Studies</button></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- UNMISSABLE TOPICS -->
   <section id="unmissable">
     <h2 class="section-title">⭐ Unmissable Topics</h2>
-    <p class="section-desc">These are areas that appear again and again in MANEB MSCE papers. Master them first!</p>
+    <p class="section-desc">These areas appear year after year. Master them early — they give you the highest return on study time.</p>
 
     <div class="unmissable">
       <div class="topic-grid">
@@ -509,37 +539,34 @@
           <h4>🧬 Biology</h4>
           <ul>
             <li>First-line defence mechanisms</li>
-            <li>Human reproductive system adaptations</li>
-            <li>Liver functions related to digestion</li>
+            <li>Human reproductive adaptations</li>
+            <li>Liver functions in digestion</li>
             <li>Blood clotting process</li>
             <li>Breathing mechanisms</li>
-            <li>Ecology & human impact on ecosystems</li>
-            <li>Genetics, evolution & disease control</li>
+            <li>Ecology & human impact</li>
+            <li>Genetics, evolution & disease</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>📐 Mathematics</h4>
           <ul>
             <li>Algebra (factorisation, polynomials, simultaneous equations)</li>
             <li>Trigonometry</li>
-            <li>Mensuration (especially 3D shapes)</li>
+            <li>Mensuration (especially 3D)</li>
             <li>Statistics & Probability</li>
             <li>Vectors, Sets & Coordinate geometry</li>
             <li>Graphs & Linear programming</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>✍️ English</h4>
           <ul>
             <li>Summary writing</li>
-            <li>Composition (formal letters, argumentative & descriptive essays)</li>
+            <li>Composition (formal letters, argumentative & descriptive)</li>
             <li>Comprehension + accurate grammar</li>
             <li>Literature analysis (where applicable)</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>🌍 Geography</h4>
           <ul>
@@ -549,7 +576,6 @@
             <li>Agriculture & environmental issues (Malawi focus)</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>⚗️ Chemistry</h4>
           <ul>
@@ -557,124 +583,151 @@
             <li>Chemical bonding & formulae</li>
             <li>Acids, bases & salts</li>
             <li>Stoichiometry & mole concept</li>
-            <li>Organic chemistry (hydrocarbons, alcohols, acids)</li>
+            <li>Organic chemistry basics</li>
             <li>Electrolysis & industrial processes</li>
           </ul>
         </div>
-
         <div class="topic-card">
-          <h4>⚡ Physics / Physical Science</h4>
+          <h4>⚡ Physics</h4>
           <ul>
             <li>Motion, forces & Newton’s laws</li>
             <li>Work, energy & power</li>
             <li>Electricity & magnetism</li>
-            <li>Light, lenses & reflection/refraction</li>
-            <li>Waves, sound & heat transfer</li>
+            <li>Light, lenses & refraction</li>
+            <li>Waves, sound & heat</li>
             <li>Gas laws & simple machines</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>🌱 Agriculture</h4>
           <ul>
             <li>Soil types, fertility & conservation</li>
-            <li>Crop production & common pests/diseases</li>
-            <li>Livestock production & animal health</li>
-            <li>Farm tools, machinery & records</li>
-            <li>Agricultural marketing & entrepreneurship</li>
-            <li>Environmental management on the farm</li>
+            <li>Crop production & pests/diseases</li>
+            <li>Livestock & animal health</li>
+            <li>Farm tools, records & marketing</li>
+            <li>Environmental management</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>📜 History</h4>
           <ul>
-            <li>Pre-colonial societies in Malawi & Central Africa</li>
+            <li>Pre-colonial societies in Malawi</li>
             <li>Colonial rule & its impact</li>
             <li>Struggle for independence</li>
-            <li>Post-independence political & economic developments</li>
-            <li>Regional & international relations affecting Malawi</li>
+            <li>Post-independence developments</li>
+            <li>Regional & international relations</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>🗣️ Chichewa</h4>
           <ul>
             <li>Comprehension & summary</li>
-            <li>Composition (formal & informal writing)</li>
+            <li>Composition (formal & informal)</li>
             <li>Grammar & language use</li>
-            <li>Literature / culture-related questions</li>
+            <li>Literature / culture questions</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>✝️ Bible Knowledge</h4>
           <ul>
-            <li>Life and teachings of Jesus (parables, miracles, passion)</li>
-            <li>Early Church (Acts of the Apostles)</li>
-            <li>Old Testament prophets & key events</li>
-            <li>Christian living, values & ethics</li>
+            <li>Life & teachings of Jesus</li>
+            <li>Early Church (Acts)</li>
+            <li>Old Testament prophets & events</li>
+            <li>Christian living & ethics</li>
           </ul>
         </div>
-
         <div class="topic-card">
           <h4>💻 Computer Studies</h4>
           <ul>
-            <li>Hardware & software components</li>
-            <li>Word processing, spreadsheets & databases</li>
-            <li>Internet, email & online safety</li>
-            <li>Algorithms, flowcharts & basic programming concepts</li>
-            <li>Computer ethics, security & impact on society</li>
+            <li>Hardware & software</li>
+            <li>Word processing, spreadsheets, databases</li>
+            <li>Internet, email & safety</li>
+            <li>Algorithms & flowcharts</li>
+            <li>Ethics, security & society</li>
           </ul>
         </div>
-
         <div class="topic-card">
-          <h4>🤝 Life Skills / Social Studies</h4>
+          <h4>🤝 Life Skills</h4>
           <ul>
-            <li>Personal development & decision-making</li>
-            <li>Health, hygiene & HIV/AIDS awareness</li>
-            <li>Citizenship, human rights & governance</li>
-            <li>Family, relationships & gender issues</li>
-            <li>Entrepreneurship & the world of work</li>
+            <li>Personal development & decisions</li>
+            <li>Health, hygiene & HIV awareness</li>
+            <li>Citizenship & human rights</li>
+            <li>Family, relationships & gender</li>
+            <li>Entrepreneurship & work</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <section id="tips">
+    <h2 class="section-title">💡 Smart Exam Tips</h2>
+    <p class="section-desc">Practical advice that helps you score higher, not just study longer.</p>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h3>How MSCE is awarded</h3>
+        <p>You need either:</p>
+        <ul>
+          <li>Pass in <strong>6 subjects</strong> including English, with at least one credit/distinction, or</li>
+          <li>Pass in <strong>5 subjects</strong> including English, with at least three credits/distinctions</li>
+        </ul>
+        <p style="margin-top:0.5rem;">English is compulsory. Protect that grade.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Study smarter, not longer</h3>
+        <ul>
+          <li>Master the unmissable topics first — they appear most often</li>
+          <li>Practise timed past papers after learning a topic, not before</li>
+          <li>Review mistakes carefully — that is where real improvement happens</li>
+          <li>Use active recall: close the book and write what you remember</li>
+        </ul>
+      </div>
+      <div class="tip-card">
+        <h3>In the exam room</h3>
+        <ul>
+          <li>Read every question twice before answering</li>
+          <li>Start with questions you know well to build confidence</li>
+          <li>Show clear working in Maths and Sciences — method marks matter</li>
+          <li>Manage time: leave a few minutes to check answers</li>
+        </ul>
+      </div>
+      <div class="tip-card">
+        <h3>Subject-specific focus</h3>
+        <ul>
+          <li><strong>English:</strong> Practise summary and composition weekly</li>
+          <li><strong>Maths:</strong> Master algebra and graphs early</li>
+          <li><strong>Sciences:</strong> Learn to draw and label diagrams accurately</li>
+          <li><strong>Essay subjects:</strong> Structure answers with clear points and examples</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <h2 class="section-title">ℹ️ About MSCE LIBRARY</h2>
-    <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
-      <p style="margin-bottom: 1rem;">
-        <strong>MSCE LIBRARY</strong> is a free resource hub created to help Malawi secondary school students prepare effectively for the Malawi School Certificate of Education (MSCE) examinations administered by MANEB.
-      </p>
-      <p style="margin-bottom: 1rem;">
-        We prioritise <strong>MSCE subjects</strong>, organise past papers by subject (not randomly), and highlight the high-yield topics that examiners return to year after year.
-      </p>
-      <p style="margin-bottom: 1rem;">
-        Past papers are sourced from publicly available educational collections such as FiloKin Edu and other free sharing platforms. Always cross-check with your teachers and official MANEB information.
-      </p>
-      <p>
-        More features (marking schemes, detailed study guides, pathway information for the new curriculum) will be added as we grow. Stay focused and study smart! 💪
-      </p>
+    <div class="about-box">
+      <p><strong>MSCE LIBRARY</strong> is a free resource built for Malawi secondary school students preparing for the Malawi School Certificate of Education (MSCE) examinations run by MANEB.</p>
+      <p>We focus on clear study guidance, high-yield topics and practical exam strategies. Past papers are linked only when you choose to use them — the site itself is designed to be useful on its own.</p>
+      <p>Always cross-check important details with your teachers and official MANEB information. More study notes and features will be added over time.</p>
+      <p>Stay consistent. Study smart. You’ve got this. 💪</p>
     </div>
   </section>
 
   <footer>
     <p>Built with ❤️ for Malawi students • MSCE LIBRARY 2026</p>
-    <p style="margin-top: 0.5rem;">Resources linked from free educational sites • Not affiliated with MANEB</p>
+    <p style="margin-top: 0.4rem;">Independent resource • Not affiliated with MANEB</p>
   </footer>
 
-  <!-- Subject Modal -->
   <div class="modal" id="subjectModal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">×</button>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
       <h2 id="modalTitle">Subject</h2>
-      <p id="modalDesc" style="color: var(--muted);"></p>
-      <div class="links" id="modalLinks"></div>
-      <div class="note">
-        💡 Tip: Practice under timed conditions. After attempting a paper, review the topics you found difficult using the Unmissable Topics list.
+      <p class="subtitle" id="modalSubtitle"></p>
+      <div id="modalBody"></div>
+      <div class="external-links" id="modalExternal" style="display:none;">
+        <p>Need actual past papers? You can find free collections here:</p>
+        <div id="modalLinks"></div>
       </div>
     </div>
   </div>
@@ -683,88 +736,266 @@
     const subjects = {
       mathematics: {
         title: "📐 Mathematics",
-        desc: "Core MSCE subject. Focus on algebra, trigonometry, mensuration, statistics and graphs.",
+        subtitle: "Core MSCE subject — strong algebra and graphs make a big difference.",
+        body: `
+          <h3>What to prioritise</h3>
+          <ul>
+            <li>Algebra: factorisation, simultaneous equations, polynomials, remainder theorem</li>
+            <li>Trigonometry and identities</li>
+            <li>Mensuration (especially surface area and volume of 3D shapes)</li>
+            <li>Statistics (ungrouped and grouped data) and Probability</li>
+            <li>Vectors, Sets, Coordinate geometry</li>
+            <li>Graphs and Linear programming</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Practise showing every step clearly. Method marks are easy points if your working is neat and logical.
+          </div>
+          <h3>Exam approach</h3>
+          <ul>
+            <li>Paper I often tests breadth — don’t skip any topic completely</li>
+            <li>Paper II rewards deeper problem-solving — practise multi-step questions</li>
+            <li>Always check units and final answers</li>
+          </ul>
+        `,
         links: [
-          { name: "Browse Mathematics papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=mathematics&grade=Form+4" },
-          { name: "All Mathematics resources (FiloKin)", url: "https://kizitochikuni.com/pdfs?subject=mathematics" }
+          { name: "Mathematics past papers (external)", url: "https://kizitochikuni.com/pdfs?subject=mathematics&grade=Form+4" }
         ]
       },
       biology: {
         title: "🧬 Biology",
-        desc: "Very popular MSCE subject. Essay questions on defence, reproduction, ecology and genetics are frequent.",
+        subtitle: "Very popular subject. Essay-style questions on systems and ecology appear often.",
+        body: `
+          <h3>High-yield areas</h3>
+          <ul>
+            <li>Cell structure and specialised cells</li>
+            <li>Human systems: digestion, respiration, circulation, reproduction, excretion</li>
+            <li>First-line and second-line defence mechanisms</li>
+            <li>Plant processes: photosynthesis, transport, tropisms</li>
+            <li>Ecology, food chains/webs and human impact</li>
+            <li>Genetics, inheritance and evolution</li>
+            <li>Diseases, immunity and control measures</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Practise writing structured answers (point + explanation + example). Diagrams must be large, clear and fully labelled.
+          </div>
+          <h3>Exam approach</h3>
+          <ul>
+            <li>“Describe any five…” questions are common — prepare lists with explanations</li>
+            <li>Learn processes in sequence (e.g. blood clotting, breathing mechanism)</li>
+            <li>Link theory to everyday or Malawian examples where possible</li>
+          </ul>
+        `,
         links: [
-          { name: "Browse Biology papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=biology&grade=Form+4" },
-          { name: "All Biology resources", url: "https://kizitochikuni.com/pdfs?subject=biology" }
+          { name: "Biology past papers (external)", url: "https://kizitochikuni.com/pdfs?subject=biology&grade=Form+4" }
         ]
       },
       chemistry: {
         title: "⚗️ Chemistry",
-        desc: "Focus on atomic structure, bonding, acids & bases, organic chemistry and stoichiometry.",
+        subtitle: "Focus on understanding principles, not just memorising facts.",
+        body: `
+          <h3>Key topics</h3>
+          <ul>
+            <li>Atomic structure, electron arrangement and the Periodic Table</li>
+            <li>Chemical bonding (ionic, covalent) and formulae</li>
+            <li>Acids, bases, salts and neutralisation</li>
+            <li>Stoichiometry, mole concept and reacting masses</li>
+            <li>Organic chemistry: hydrocarbons, alcohols, carboxylic acids</li>
+            <li>Electrolysis and industrial applications</li>
+            <li>Rates of reaction and energy changes</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Practise writing balanced equations and calculating moles regularly. These skills appear in many questions.
+          </div>
+        `,
         links: [
-          { name: "Browse Chemistry papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=chemistry&grade=Form+4" }
+          { name: "Chemistry past papers (external)", url: "https://kizitochikuni.com/pdfs?subject=chemistry&grade=Form+4" }
         ]
       },
       physics: {
         title: "⚡ Physics / Physical Science",
-        desc: "Key areas include motion, electricity, light, waves and energy.",
+        subtitle: "Understand concepts and practise applying formulas with clear units.",
+        body: `
+          <h3>Core areas</h3>
+          <ul>
+            <li>Motion, forces, Newton’s laws and momentum</li>
+            <li>Work, energy, power and machines</li>
+            <li>Electricity: current, voltage, resistance, circuits</li>
+            <li>Magnetism and electromagnetism</li>
+            <li>Light: reflection, refraction, lenses</li>
+            <li>Waves, sound and heat transfer</li>
+            <li>Gas laws and pressure</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Always write the formula, substitute values, show units and give the final answer clearly. Diagrams (circuits, ray diagrams) must be neat.
+          </div>
+        `,
         links: [
-          { name: "Browse Physics papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=physics&grade=Form+4" }
+          { name: "Physics past papers (external)", url: "https://kizitochikuni.com/pdfs?subject=physics&grade=Form+4" }
         ]
       },
       agriculture: {
         title: "🌱 Agriculture",
-        desc: "Practical and theory papers covering crops, animals, soil and farming systems in Malawi.",
+        subtitle: "Link theory to real farming practices in Malawi.",
+        body: `
+          <h3>Important topics</h3>
+          <ul>
+            <li>Soil: types, properties, fertility and conservation</li>
+            <li>Crop production: land preparation, planting, pests and diseases</li>
+            <li>Livestock: common animals, feeding, health and housing</li>
+            <li>Farm tools, simple machinery and farm records</li>
+            <li>Agricultural marketing and basic entrepreneurship</li>
+            <li>Environmental management and sustainable practices</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Use local examples (maize, groundnuts, cattle, goats). Examiners appreciate answers rooted in Malawian agriculture.
+          </div>
+        `,
         links: [
-          { name: "Browse Agriculture papers", url: "https://kizitochikuni.com/pdfs?subject=agriculture" }
+          { name: "Agriculture resources (external)", url: "https://kizitochikuni.com/pdfs?subject=agriculture" }
         ]
       },
       computer: {
         title: "💻 Computer Studies",
-        desc: "Hardware, software, applications, internet and basic programming concepts.",
+        subtitle: "Understand concepts and be ready to apply them practically.",
+        body: `
+          <h3>Focus areas</h3>
+          <ul>
+            <li>Computer hardware and software</li>
+            <li>Word processing, spreadsheets and databases</li>
+            <li>Internet, email, networks and online safety</li>
+            <li>Algorithms, flowcharts and basic programming ideas</li>
+            <li>Computer ethics, security and impact on society</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Practise explaining processes step-by-step (e.g. how data moves from input to output). Be ready for both theory and practical-style questions.
+          </div>
+        `,
         links: [
-          { name: "Browse Computer Studies resources", url: "https://kizitochikuni.com/pdfs?subject=computer" }
+          { name: "Computer Studies resources (external)", url: "https://kizitochikuni.com/pdfs?subject=computer" }
         ]
       },
       english: {
         title: "✍️ English",
-        desc: "Compulsory for MSCE certificate. Strong focus on summary, composition and comprehension.",
+        subtitle: "Compulsory for the MSCE certificate. Protect this subject.",
+        body: `
+          <h3>What examiners look for</h3>
+          <ul>
+            <li><strong>Summary:</strong> Identify main points and rewrite in your own words within the word limit</li>
+            <li><strong>Composition:</strong> Formal letters, informal letters, narrative, descriptive and argumentative essays</li>
+            <li><strong>Comprehension:</strong> Understand the passage and answer precisely</li>
+            <li><strong>Grammar & usage:</strong> Tenses, sentence structure, punctuation, agreement</li>
+            <li>Literature components where they apply in your school</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Write one composition every week under timed conditions. Practise summaries regularly — many students lose easy marks here.
+          </div>
+          <h3>Exam approach</h3>
+          <ul>
+            <li>Plan compositions before writing (quick outline)</li>
+            <li>Leave time to proofread for grammar and spelling</li>
+            <li>In summary, stick strictly to the required length</li>
+          </ul>
+        `,
         links: [
-          { name: "Browse English papers on FiloKin Edu", url: "https://kizitochikuni.com/pdfs?subject=english&grade=Form+4" }
+          { name: "English past papers (external)", url: "https://kizitochikuni.com/pdfs?subject=english&grade=Form+4" }
         ]
       },
       geography: {
         title: "🌍 Geography",
-        desc: "Map work, climate, population, agriculture and environmental issues are regularly examined.",
+        subtitle: "Map skills + understanding of physical and human geography.",
+        body: `
+          <h3>Key areas</h3>
+          <ul>
+            <li>Map reading: scale, direction, grid references, contours, cross-sections</li>
+            <li>Physical geography: weather, climate, landforms, rivers, soils</li>
+            <li>Human geography: population, settlement, migration, urbanisation</li>
+            <li>Economic activities: agriculture, mining, industry, transport, tourism</li>
+            <li>Environmental issues and resource management (with Malawi examples)</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Practise map work regularly. Many students lose marks on scale calculations and contour interpretation.
+          </div>
+        `,
         links: [
-          { name: "Browse Geography papers", url: "https://kizitochikuni.com/pdfs?subject=geography&grade=Form+4" }
+          { name: "Geography past papers (external)", url: "https://kizitochikuni.com/pdfs?subject=geography&grade=Form+4" }
         ]
       },
       history: {
         title: "📜 History",
-        desc: "Malawi and African history, colonial period, independence and contemporary issues.",
+        subtitle: "Focus on causes, effects and clear structured answers.",
+        body: `
+          <h3>Major themes</h3>
+          <ul>
+            <li>Pre-colonial societies in Malawi and Central Africa</li>
+            <li>Colonial rule: establishment, administration and impact</li>
+            <li>The struggle for independence</li>
+            <li>Post-independence political and economic developments</li>
+            <li>Regional and international relations affecting Malawi</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Learn to write balanced answers: causes → events → effects. Use specific examples and dates where possible.
+          </div>
+        `,
         links: [
-          { name: "Browse History papers", url: "https://kizitochikuni.com/pdfs?subject=history" }
+          { name: "History past papers (external)", url: "https://kizitochikuni.com/pdfs?subject=history" }
         ]
       },
       chichewa: {
         title: "🗣️ Chichewa",
-        desc: "Language, comprehension, composition and literature components.",
+        subtitle: "Language accuracy and clear expression matter.",
+        body: `
+          <h3>What to practise</h3>
+          <ul>
+            <li>Comprehension and summary writing</li>
+            <li>Composition: formal and informal writing</li>
+            <li>Grammar and correct language use</li>
+            <li>Literature and cultural questions where applicable</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Read Chichewa texts regularly and practise writing under time pressure. Accuracy in spelling and structure scores marks.
+          </div>
+        `,
         links: [
-          { name: "Browse Chichewa papers", url: "https://kizitochikuni.com/pdfs?subject=chichewa" }
+          { name: "Chichewa resources (external)", url: "https://kizitochikuni.com/pdfs?subject=chichewa" }
         ]
       },
       bible: {
         title: "✝️ Bible Knowledge",
-        desc: "Life and teachings of Jesus, early church, Old Testament prophets and Christian living.",
+        subtitle: "Know the key stories, teachings and their application.",
+        body: `
+          <h3>Core content</h3>
+          <ul>
+            <li>Life and teachings of Jesus: parables, miracles, passion, resurrection</li>
+            <li>The Early Church (Acts of the Apostles)</li>
+            <li>Selected Old Testament stories and prophets</li>
+            <li>Christian living, values and ethical application</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Learn the main points of each parable or story and be ready to explain the lesson or application.
+          </div>
+        `,
         links: [
-          { name: "Browse Bible Knowledge papers", url: "https://kizitochikuni.com/pdfs?subject=bible" }
+          { name: "Bible Knowledge resources (external)", url: "https://kizitochikuni.com/pdfs?subject=bible" }
         ]
       },
       "life-skills": {
         title: "🤝 Life Skills / Social Studies",
-        desc: "Personal development, health, citizenship and social issues.",
+        subtitle: "Apply knowledge to real-life situations and decisions.",
+        body: `
+          <h3>Important themes</h3>
+          <ul>
+            <li>Personal development, self-awareness and decision-making</li>
+            <li>Health, hygiene, nutrition and HIV/AIDS awareness</li>
+            <li>Citizenship, human rights, governance and responsibilities</li>
+            <li>Family, relationships, gender and communication</li>
+            <li>Entrepreneurship and the world of work</li>
+          </ul>
+          <div class="study-tip">
+            <strong>Study tip:</strong> Use practical examples from daily life in Malawi. Examiners value applied understanding, not just definitions.
+          </div>
+        `,
         links: [
-          { name: "Browse related resources", url: "https://kizitochikuni.com/pdfs" }
+          { name: "Related resources (external)", url: "https://kizitochikuni.com/pdfs" }
         ]
       }
     };
@@ -774,12 +1005,20 @@
       if (!data) return;
 
       document.getElementById('modalTitle').textContent = data.title;
-      document.getElementById('modalDesc').textContent = data.desc;
+      document.getElementById('modalSubtitle').textContent = data.subtitle;
+      document.getElementById('modalBody').innerHTML = data.body;
 
-      const linksContainer = document.getElementById('modalLinks');
-      linksContainer.innerHTML = data.links.map(link => 
-        `<a href="${link.url}" target="_blank" rel="noopener">${link.name} →</a>`
-      ).join('');
+      const linksDiv = document.getElementById('modalLinks');
+      const externalBox = document.getElementById('modalExternal');
+
+      if (data.links && data.links.length) {
+        linksDiv.innerHTML = data.links.map(l =>
+          `<a href="${l.url}" target="_blank" rel="noopener">${l.name} →</a>`
+        ).join('');
+        externalBox.style.display = 'block';
+      } else {
+        externalBox.style.display = 'none';
+      }
 
       document.getElementById('subjectModal').classList.add('active');
     }
@@ -788,12 +1027,10 @@
       document.getElementById('subjectModal').classList.remove('active');
     }
 
-    // Close on outside click
     document.getElementById('subjectModal').addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
 
-    // Smooth scroll for nav
     document.querySelectorAll('nav a').forEach(a => {
       a.addEventListener('click', function(e) {
         if (this.getAttribute('href').startsWith('#')) {
